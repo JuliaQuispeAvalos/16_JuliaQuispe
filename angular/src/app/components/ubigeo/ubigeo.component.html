@@ -1,0 +1,29 @@
+<div>
+  <h1 style="font-family: 'Agency FB'; font-size: 65px">Listado de Ubigeos</h1>
+</div>
+
+<button class="btn btn-success" (click)="navigateForm()">Nuevo Ubigeo</button>
+
+<table class="table" style="margin: 40px">
+  <thead class="table-dark">
+  <tr align="center">
+    <th scope="col">Código Ubigeo:</th>
+    <th scope="col">Departamento:</th>
+    <th scope="col">Provincia:</th>
+    <th scope="col">Distrito:</th>
+    <th scope="col">Acciones:</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr align="center" *ngFor="let ubigeo of ubigeos">
+    <th scope="row">{{ubigeo.id}}</th>
+    <td>{{ubigeo.departamento}}</td>
+    <td>{{ubigeo.provincia}}</td>
+    <td>{{ubigeo.distrito}}</td>
+    <td>
+      <button class="btn btn-warning" style="margin: 2px" (click)="editarUbigeo(ubigeo)">Modificar</button>
+      <button class="btn btn-danger" style="margin: 2px" (click)="deleteUbigeo(ubigeo.id)">Eliminar</button>
+    </td>
+  </tr>
+</table>
+

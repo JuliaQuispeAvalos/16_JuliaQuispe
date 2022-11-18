@@ -1,0 +1,31 @@
+<div align="center">
+  <form [formGroup]="ubigeoForm" (ngSubmit)="saveUbigeo()" class="py-4">
+
+    <h1 style="font-family: 'Agency FB'; font-size: 65px">{{ubigeoService.ubigeoSelect ? 'Editar Ubigeo' : 'Registrar Ubigeo'}}</h1>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="id" maxlength="6" minlength="3" class="form-control" placeholder="Ingrese el código Ubigeo.">
+      <label>Código Ubigeo:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="departamento" minlength="3" class="form-control" placeholder="Ingrese el departamento.">
+      <label>Departamento:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="provincia" minlength="3" class="form-control" placeholder="Ingrese la provincia.">
+      <label>Provincia:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="distrito" maxlength="8" minlength="3" class="form-control" placeholder="Ingrese el distrito.">
+      <label>Distrito:</label>
+    </div>
+
+    <button style="margin: 10px" class="btn btn-light mr-2" type="button" (click)="navigateUbigeo()">Cancelar</button>
+
+    <button style="margin: 10px" type="submit" class="btn btn-success">{{ubigeoService.ubigeoSelect ? 'Actualizar' : 'Registrar Ubigeo'}}</button>
+
+  </form>
+</div>

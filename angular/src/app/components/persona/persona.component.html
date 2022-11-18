@@ -1,0 +1,41 @@
+<div>
+  <h1 style="font-family: 'Agency FB'; font-size: 65px">Listado de Personas</h1>
+</div>
+
+<button class="btn btn-success" (click)="navigateForm()">Nueva Persona</button>
+
+<table class="table" style="margin: 40px">
+  <thead class="table-dark">
+  <tr align="center">
+    <th scope="col">Nombre Persona:</th>
+    <th scope="col">Apellido Paterno:</th>
+    <th scope="col">Apellido Materno:</th>
+    <th scope="col">Celular:</th>
+    <th scope="col">Direccion:</th>
+    <th scope="col">Email:</th>
+    <th scope="col">Estado:</th>
+    <th scope="col">Tipo de Persona:</th>
+    <th scope="col">sueldo de Persona:</th>
+    <th scope="col">codigo ubiegeo:</th>
+    <th scope="col">Acciones:</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr align="center" *ngFor="let persona of personas">
+    <th scope="row">{{persona.nombrePersona}}</th>
+    <td>{{persona.apellidoPatPersona}}</td>
+    <td>{{persona.apellidoMatPersona}}</td>
+    <td>{{persona.celularPersona}}</td>
+    <td>{{persona.direccionPersona}}</td>
+    <td>{{persona.correoPersona}}
+    <td>{{persona.estadoPersona}}</td>
+    <td>{{persona.tipoPersona}}</td>
+    <td>{{persona.sueldoPersona}}</td>
+    <td>{{persona.codigoUbigeo}}</td>
+    <td>
+      <button class="btn btn-warning" style="margin: 2px" (click)="editarPersona(persona)">Modificar</button>
+      <button class="btn btn-danger" style="margin: 2px" (click)="deletePersona(persona.id)">Eliminar</button>
+    </td>
+  </tr>
+</table>
